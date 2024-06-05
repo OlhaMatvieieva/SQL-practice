@@ -1,4 +1,4 @@
--- top 5 Data Science salaries in 2023
+-- Top 5 Data Science salaries in 2023
 
 SELECT 
 	year
@@ -14,7 +14,7 @@ LIMIT 5;
 -- Average, min, max salary in 2023
 
 SELECT
-	AVG(salary_in_usd) AS salary_avg
+	ROUND(AVG(salary_in_usd), 2) AS salary_avg
 	, MIN(salary_in_usd) AS salary_min
 	, MAX (salary_in_usd) AS salary_max
 FROM salaries
