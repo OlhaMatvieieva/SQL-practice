@@ -10,5 +10,3 @@ WHERE
 	AND job_title = 'Data Scientist'
 ORDER BY salary_in_usd DESC
 LIMIT 5;
-
--- 
