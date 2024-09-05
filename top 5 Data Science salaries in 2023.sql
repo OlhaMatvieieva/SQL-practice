@@ -77,3 +77,33 @@ WHERE
 	AND job_title = 'ML Engineer'
 ORDER BY salary_in_usd DESC
 LIMIT 5;
+
+/*CASE: Show data and add column 'exp_level_full' with full name of employee's
+expirience level by column exp_level: Entry-level(EN), Mid-level(MI), 
+Senior-level(SE), Executive-level(EX)*/
+
+SELECT *
+	, CASE 
+		WHEN exp_level = 'EN' THEN 'Entry level'
+		WHEN exp_level = 'MI' THEN 'Mid level'
+		WHEN exp_level = 'SE' THEN 'Senior level'
+		ELSE 'Executive level'
+		END AS exp_level_full
+FROM salaries
+LIMIT 10;
+
+
+SELECT *
+	, CASE 
+		WHEN salary_in_usd < 50000 THEN 'Category 1'
+		WHEN salary_in_usd < 100000 THEN 'Category 2'
+		WHEN salary_in_usd < 150000 THEN 'Category 3'
+		ELSE 'Category 4'
+		END AS salary_level
+FROM salaries
+LIMIT 10;
+
+-- Examine all columns for missing values
+
+SELECT COUNT(*) - COUNT(salary_in_usd)
+FROM salaries;
